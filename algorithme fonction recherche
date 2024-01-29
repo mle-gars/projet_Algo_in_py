@@ -1,0 +1,22 @@
+algorithme fonction recherche_interpolation_iterative : booléen
+Paramètres locaux
+   liste    l
+   élément  x
+   entier   g,d                    /* Bornes gauche et droite de la liste l */
+Variables
+   entier   p                      /* indice de la place estimée de l'élément recherché */
+Début
+   tant que g<=d faire
+      p \leftarrow g + ((d - g) * (x - ième(l,g) div (ième(l,d) - ième(l,g))
+      si x=ième(l,p) alors
+         retourne(p)               /* Recherche positive */
+      sinon
+         si x<ième(l,p) alors
+            d \leftarrow p-1
+         sinon
+            g \leftarrow p+1
+         fin si
+      fin si
+   fin tant que
+   retourne(0)                     /* Recherche négative */
+fin algorithme fonction recherche_interpolation_iterative
